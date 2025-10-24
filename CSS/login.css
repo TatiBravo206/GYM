@@ -36,7 +36,6 @@ body {
 .imagen-formulario {
     flex: 1;
     background-image: url('../img/img-login.webp');
-    /* Usa la imagen de login correspondiente */
     background-position: center center;
     background-size: cover;
 }
