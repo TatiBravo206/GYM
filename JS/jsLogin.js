@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (emailInput === usuarioData.email && passwordInput === usuarioData.contraseña) {
                 alert('¡Inicio de sesión exitoso!');
                 // Aquí puedes redirigir al usuario a su página de inicio
-                window.location.href = '../HTML/index.html'; // Ejemplo de redirección
+                window.location.href = '../HTML/horarios.html'; // Ejemplo de redirección
             } else {
                 alert('Correo electrónico o contraseña incorrectos.');
             }
