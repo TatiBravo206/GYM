@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenfit</title>
+    <link rel="icon" type="assets" href="../img/icono.ico" />
+    <link rel="stylesheet" href="../CSS/home.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!--barra de menu-->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <img src="../img/icono.ico">
+                <h1>Zenfit</h1>
+            </div>
+            <!-- boton menu movil -->
+            <input id="menu-toggle" type="checkbox" class="menu-toggle" />
+            <label for="menu-toggle" class="menu-btn" aria-label="Abrir menú">
+                <span></span>
+            </label>
+
+            <!-- menu principal -->
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#ofertas">Planes</a></li>
+                    <li><a href="#coach">Entrenadores</a></li>
+                    <li><a href="#clases">Clases</a></li>
+                    <li><a href="#sedes">Sedes</a></li>
+                    <li id="login"><a href="../HTML/login.html">Iniciar Sesión</a></li> <!-- enlace a login -->
+                    <li id="registro"><a href="../HTML/registro.html">Registrarse</a></li> <!-- enlace a registro -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <!--inicio - zona principal-->
+        <section id="home" class="hero">
+            <div class="hero-text">
+                <p> <br>En <strong>Zenfit</strong>, cuidamos tu bienestar.
+                    Entrena en nuestras sedes con los mejores entrenadores y
+                    equipos modernos para alcanzar tu mejor versión.</p>
+                <p>“Transforma tu cuerpo, supera tus límites y alcanza tus metas con nosotros.”</p>
+                <a href="#ofertas" class="button">Únete ahora</a>
+            </div>
+        </section>
+
+        <!--OFERTAS-->
+        <section id="ofertas" class="ofertas">
+            <div class="tittle">
+                <h2>Nuestros Planes</h2>
+                <p>Aprovecha de las ofertas exclusivas en Zenfit y entrena al mejor precio.</p>
+            </div>
+
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- Cartas de las ofertas -->
+                    <article class="section-card">
+                        <div class="card-body">
+                            <h3> Mensual <br>(Sin compromiso)</h3>
+                            <p class="meta">Acceso libre a todas las máquinas de entrenamiento
+                                y clases grupales.<br>
+                                Ideal si buscas flexibilidad y quieres pagar mes a mes.</p>
+                            <h4>129.900 COP por mes.</h4>
+                            <div class="card-actions">
+                                <a href="../HTML/registro.html" class="btn small">¡Inscríbete ya!</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="section-card">
+                        <div class="card-body">
+                            <h3> Planes Cortos <br>(3-6 meses)</h3>
+                            <p class="meta">Perfectos para quienes desean entrenar por temporada.<br>
+                                Incluye acceso a máquinas, clases grupales y rutinas personalizadas según tu objetivo.
+                            </p>
+                            <h4>Entre 319.900 COP y 649.900 COP</h4>
+                            <div class="card-actions">
+                                <a href="../HTML/registro.html" class="btn small">¡Inscríbete ya!</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="section-card">
+                        <div class="card-body">
+                            <h3> Anual <br>(Pago Total)</h3>
+                            <p class="meta">Entrena todo el año con acceso completo al gimnasio y clases grupales.<br>
+                                Incluye rutinas personalizadas según tu objetivo y asesoría mensual.</p>
+                            <h4>1.029.900 COP por el año completo.</h4>
+                            <div class="card-actions">
+                                <a href="../HTML/registro.html" class="btn small">¡Inscríbete ya!</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="section-card">
+                        <div class="card-body">
+                            <h3> Anual <br>(Débito Automático / Permanencia)</h3>
+                            <p class="meta">Disfruta de todos los beneficios Zenfit a un menor precio mensual.<br>
+                                Acceso ilimitado a máquinas y clases grupales, con pago automático y fidelidad de 12
+                                meses.</p>
+                            <h4>94.900 COP por mes</h4>
+                            <div class="card-actions">
+                                <a href="../HTML/registro.html" class="btn small">¡Inscríbete ya!</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Entrenador personal -->
+                    <article class="section-card">
+                        <div class="card-body">
+                            <h3>Plan Entrenador Personal</h3>
+                            <p class="meta">
+                                Mejora tus resultados con sesiones personalizadas junto a un entrenador certificado.
+                                <br>Incluye seguimiento nutricional y plan de entrenamiento adaptado a ti.
+                            </p>
+                            <h4>Desde 60.000 COP por sesión</h4>
+                            <div class="card-actions">
+                                <a href="#coach" class="btn small">Mas informacion</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <button class="carousel-btn prev">&#10094;</button>
+                <button class="carousel-btn next">&#10095;</button>
+            </div>
+        </section>
+
+        <!--Perfiles de los entrenadores-->
+        <section id="coach" class="coach">
+            <div class="tittle">
+                <h2>Perfiles de Entrenadores</h2>
+                <p>Conoce de nuestros entrenadores y elige el plan ideal para ti</p>
+            </div>
+
+            <div class="container">
+                <div class="card">
+                    <!-- Cartas de los perfiles -->
+                    <article class="section-card">
+                        <div class="card-body">
+                            <div class="thumb">
+                                <img src="../img/coach1.jpg">
+                            </div>
+                            <h4>Juan Barrera</h4>
+                            <p class="meta">Especialidad en boxeo, pesas, cardio.</p>
+                            <p class="meta">Apasionado del fitness con más de 5 años de experiencia ayudando a personas
+                                a mejorar su
+                                rendimiento</p>
+                            <div class="card-actions">
+                                <a href="../HTML/login.html" class="btn small">Reservar Sesion</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="section-card">
+                        <div class="card-body">
+                            <div class="thumb">
+                                <img src="../img/coach2.jpg">
+                            </div>
+                            <h4>Camilo Torres</h4>
+                            <p class="meta">Fuerza & Entrenamiento Funcional</p>
+                            <p class="meta">Entrenador personal certificado, experto en programas de fuerza
+                                y rehabilitación funcional para todos los niveles.</p>
+                            <div class="card-actions">
+                                <a href="../HTML/login.html" class="btn small">Reservar Sesion</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="section-card">
+                        <div class="card-body">
+                            <div class="thumb">
+                                <img src="../img/coach3.jpg">
+                            </div>
+                            <h4>Karen Garzon</h4>
+                            <p class="meta">Nutrición & Planes Personalizados</p>
+                            <p class="meta">Nutricionista deportiva que integra alimentación y
+                                entrenamiento para obtener resultados sostenibles.</p>
+                            <div class="card-actions">
+                                <a href="../HTML/login.html" class="btn small">Reservar Sesion</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!--Secccion sedes-->
+        <section id="sedes" class="sedes">
+            <div class="tittle">
+                <h2>Nuestras Sedes</h2>
+            </div>
+            <div class="sedes-container">
+                <div class="sedes-card">
+                    <!-- Cartas de las sedes -->
+                    <article class="section-card">
+                        <div class="thumb">
+                            <img src="../img/chapinero.jpg" alt="gimnasio chapinero">
+                        </div>
+                        <div class="card-body">
+                            <h4>Chapinero </h4>
+                            <p class="meta">Calle 85 #7 - 13, Carrera, Bogotá D.C.</p>
+                        </div>
+                    </article>
+
+                    <article class="section-card">
+                        <div class="thumb">
+                            <img src="../img/colina.png" alt="gimnasio la colina">
+                        </div>
+                        <div class="card-body">
+                            <h4>Colina </h4>
+                            <p class="meta">Av. Boyacá, Carrera 72 with Calle 146 b Caminos de San Lorenzo Bogotá D.C.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="section-card">
+                        <div class="thumb">
+                            <img src="../img/usaquen.jpg" alt="gimnasio Usaquén">
+                        </div>
+                        <div class="card-body">
+                            <h4>Usaquén </h4>
+                            <p class="meta">Cra 19 # 143 - 08, Usaquén, Bogotá D.C.</p>
+                        </div>
+                    </article>
+                </div>
+        </section>
+
+        <!-- pie de pagina -->
+        <footer id="contact" class="site-footer">
+            <div class="container footer-grid">
+
+                <!-- Información de la pagina -->
+                <div class="footer-about">
+                    <h4>Zenfit</h4>
+                    <p>Transforma tu cuerpo, supera tus límites y alcanza tus metas con nosotros</p>
+                </div>
+
+                <!-- Navegación -->
+                <div class="footer-nav">
+                    <h4>Navegación</h4>
+                    <nav>
+                        <a href="#home">Inicio</a>
+                        <a href="#ofertas">Planes</a>
+                        <a href="#coach">Entrenadores</a>
+                        <a href="#clases">Clases</a>
+                        <a href="#sedes">Sedes</a>
+                        <a href="../HTML/login.html">Iniciar Sesión</a> <!-- enlace a login -->
+                        <a href="../HTML/registro.html">Registrarse</a> <!-- enlace a registro -->
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Redes sociales -->
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <ul>
+                        <li><a href="#" aria-label="Instagram">@Zenfit</a></li>
+                        <li><a href="#" aria-label="Whatsapp">Whatsapp</a></li>
+                        <li><a href="#" aria-label="Facebook">Facebook</a></li>
+                        <li><a href="#" aria-label="TikTok">TikTok</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Derechos reservados -->
+            <div class="copyright">
+                © <span id="year"></span> Zenfit. Todos los derechos reservados.
+            </div>
+        </footer>
+
+        <script src="../JS/jshome.js"></script>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Zenfit</title>
+    <link rel="stylesheet" href="../CSS/registro.css" />
+    <link rel="icon" type="assets" href="../assets/icono.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="contenedor-formulario contenedor">
+
+        <div class="imagen-formulario"> </div>
+
+        <form class="formulario">
+            <div class="texto-formulario">
+                <h2>¡Bienvenido A Zenfit!</h2>
+                <p>Crea una cuenta</p>
+            </div>
+            <div class="input">
+                <label for="nombre">Nombre</label>
+                <input placeholder="Ingresa tus nombres" type="text" id="nombre">
+            </div>
+            <div class="input">
+                <label for="apellido">Apellido</label>
+                <input placeholder="Ingresa tus apellidos" type="text" id="apellido">
+            </div>
+            <div class="input">
+                <label for="nacimiento">Fecha de Nacimiento</label>
+                <input placeholder="Fecha de Nacimiento" type="date" id="fecha">
+            </div>
+            <div class="input">
+                <label for="tipoCedula">Tipo</label>
+                <select id="tipoCedula" required>
+                    <option value="">Seleccione</option>
+                    <option value="CC">Cédula de ciudadanía</option>
+                    <option value="TI">Tarjeta de identidad</option>
+                    <option value="CE">Cédula de extranjería</option>
+                </select>
+            </div>
+            <div class="input">
+                <label for="documento">Numero de Documento</label>
+                <input placeholder="Documento" type="text" id="documento">
+            </div>
+            <div class="input">
+                <label for="telefono">Telefono Movil</label>
+                <input placeholder="Telefono Movil" type="text" id="telefono">
+            </div>
+            <div class="input">
+                <label for="plan">Tipo de Plan</label>
+                <select id="plan" required>
+                    <option value="">Seleccione</option>
+                    <option value="PM">Plan Mensual</option>
+                    <option value="PC">Planes Cortos</option>
+                    <option value="PAT">Plan Anual (Pago Total)</option>
+                    <option value="PAF">Plan Anual (Fidelidad 12 meses)</option>
+                    <option value="PEP">Plan Entrenador Personal</option>
+                </select>
+            </div>
+            <div class="input">
+                <label for="sede">Sede</label>
+                <select id="sede" required>
+                    <option value="">Seleccione</option>
+                    <option value="colina">Sede La Colina</option>
+                    <option value="usaquen">Sede Usaquen</option>
+                    <option value="chapinero">Sede Chapinero</option>
+                </select>
+            </div>
+            <div class="input">
+                <label for="email">Correo Electronico</label>
+                <input placeholder="Correo Electronico" type="email" id="email">
+            </div>
+
+            <div class="input">
+                <label for="contraseña">Contraseña</label>
+                <input placeholder="Ingresa tu contraseña" type="password" id="contraseña">
+            </div>
+            <div class="input">
+                <input type="submit" value="Registrarme">
+            </div>
+            <p class="registro-texto">
+                ¿Ya tienes cuenta? <a href="../HTML/login.html">Inicia Sesion</a>
+            </p>
+        </form>
+    </div>
+    <script src="../JS/jsRegistro.js"></script>
+</body>
+
+</html>

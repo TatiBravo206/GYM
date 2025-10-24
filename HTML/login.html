@@ -4,66 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio Sesion - Gym Aurora</title>
+    <title>Inicio Sesion - Zenfit</title>
     <link rel="stylesheet" href="../CSS/login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
-
+    <link rel="icon" type="assets" href="../assets/icono.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <div class="contenedor-formulario contenedor">
 
-    <div class="container">
-        <div class="formulario">
-            <form class="sign-in">
-                <h2>Iniciar Sesion</h2>
-                <div class="campo">
+        <div class="imagen-formulario"> </div>
 
-                    <i class="ri-mail-line"></i>
-                    <input type="text" placeholder="Email">
-                </div>
-                <div class="campo">
-
-                    <i class="ri-lock-line"></i>
-                    <input type="password" placeholder="Contraseña">
-                </div>
-                <a href="#">¿Olvidaste tu Contraseña?</a>
-                <button class="btn"><strong>Iniciar Sesion</strong></button>
-            </form>
-        </div>
-        <div class="formulario">
-            <form class="sign-up">
-                <h2>Registrarse</h2>
-                <div class="campo">
-                    <i class="ri-user-line"></i>
-                    <input type="text" placeholder="Nombre completo">
-                </div>
-                <div class="campo">
-                    <i class="ri-mail-line"></i>
-                    <input type="text" placeholder="Email">
-                </div>
-                <div class="campo">
-                    <i class="ri-lock-line"></i>
-                    <input type="password" placeholder="Contraseña">
-                </div>
-                <button class="btn"><strong>Registrarse</strong></button>
-            </form>
-        </div>
-        <div class="container2">
-            <div class="welcome-up">
-                <h3>¡Bienvenido a nuestro Gimnasio!</h3>
-                <p>Inicia tu sesion para ver tus rutinas, si no tienes cuenta registrate.</p>
-                <button class="btn" id="btn-up">Registrarse</button>
+        <form class="formulario">
+            <div class="texto-formulario">
+                <h2>¡Bienvenido A Zenfit!</h2>
+                <p>Inicia sesión con tu cuenta</p>
             </div>
-            <div class="welcome-in">
-                <h3>¡Bienvenido a nuestro Gimnasio!</h3>
-                <p>Ingrese sus datos para poder registrarse.<br>
-                    Si ya tiene una cuenta inicie su sesion.</p>
-                <button class="btn" id="btn-in">Iniciar Sesion</button>
+            <div class="input">
+                <label for="usuario">Usuario</label>
+                <input placeholder="Ingresa tu nombre" type="text" id="usuario">
             </div>
-        </div>
+            <div class="input">
+                <label for="contraseña">Contraseña</label>
+                <input placeholder="Ingresa tu contraseña" type="password" id="contraseña">
+            </div>
+            <div class="password-olvidada">
+                <a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+            <div class="input">
+                <input type="submit" value="Login">
+            </div>
+            <p class="registro-texto">
+                ¿No tienes cuenta? <a href="../HTML/registro.html">Regístrate aquí</a>
+            </p>
+        </form>
     </div>
-    <script src="../JS/scriptlogin.js"></script>
+    <script src="../JS/jsLogin.js"></script>
 </body>
 
 </html>

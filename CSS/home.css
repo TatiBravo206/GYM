@@ -1,0 +1,629 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* desplazamiento suave*/
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fuente global y colores */
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    color: #222;
+    background-color: #f3f3f3;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Header */
+.site-header {
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    /* efecto vidrio moderno */
+    border-bottom: 1px solid #eee;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.logo img {
+    height: 60px;
+    margin-right: 0;
+}
+
+.logo h1 {
+    margin: 0;
+    padding: 0;
+
+}
+
+/* Navegación */
+/* Menú móvil */
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.8rem;
+}
+
+#login a,
+#registro a {
+    border: 1px solid #6382c4;
+    color: #6385c4;
+    transition: all 0.3s ease;
+}
+
+#login a:hover,
+#registro a:hover {
+    background: #638ac4;
+    color: white;
+}
+
+/* estilo de los enlaces del menu */
+.nav a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav a:hover {
+    background: #6390c4;
+    color: white;
+}
+
+
+
+.menu-toggle {
+    display: none;
+}
+
+/* estilo del boton del menu movil */
+.menu-btn {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-btn span,
+.menu-btn span::before,
+.menu-btn span::after {
+    display: block;
+    background: #222;
+    height: 3px;
+    width: 24px;
+    border-radius: 3px;
+    position: relative;
+}
+
+.menu-btn span::before,
+.menu-btn span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.menu-btn span::before {
+    top: -7px;
+}
+
+.menu-btn span::after {
+    top: 7px;
+}
+
+/*hero*/
+.hero {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    color: white;
+    background: url('../img/img-principal.jpg');
+    box-shadow: 0 10px 25px rgb(0, 9, 29);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: black;
+    border-radius: 0 0 30px 30px;
+}
+
+.hero-text {
+    max-width: 600px;
+    font-size: 1.8rem;
+    line-height: 1.6;
+}
+
+.hero-text p {
+    font-weight: 300;
+}
+
+.button {
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 12px 28px;
+    background: #6395c4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background: #2b369b;
+}
+
+/*section ofertas*/
+.ofertas {
+    padding: 4rem 2rem;
+    background-color: #b4d9ff15;
+}
+
+.tittle {
+    text-align: center;
+    padding: 2rem;
+}
+
+.tittle h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.card {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.ofertas .section-card {
+    flex: 0 0 calc(33.333% - 2rem);
+    margin: 0 1rem;
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px;
+}
+
+.ofertas .section-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-body h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #000000;
+    line-height: 1.5;
+}
+
+.card-body .meta {
+    font-size: 0.9rem;
+    color: #444444;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.card-actions {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Botón */
+.ofertas .btn.small {
+    background: #6395c4;
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.ofertas .btn.small:hover {
+    background: #2b369b;
+}
+
+/*botones flechas*/
+.ofertas .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0);
+    color: #2b369b;
+    font-weight: bold;
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.ofertas .carousel-btn.prev {
+    left: -0.5rem;
+}
+
+.ofertas .carousel-btn.next {
+    right: -0.5rem;
+}
+
+
+/* Sección de entrenadores */
+.coach {
+    padding: 4rem 2rem;
+    background-color: #b4d9ff15;
+}
+
+.coach .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Tarjetas de entrenadores */
+.coach .section-card {
+    width: 100%;
+    max-width: 350px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    text-align: center;
+}
+
+.coach .section-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen */
+.coach .thumb img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid blue;
+}
+
+/* Texto */
+.coach .card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.coach .card-body h3 {
+    color: #000;
+    margin-bottom: 0.5rem;
+}
+
+.coach h4 {
+    line-height: 2;
+}
+
+.coach .meta {
+    color: #444;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Botón */
+.coach .card-actions {
+    margin-top: 1rem;
+}
+
+.coach .btn.small {
+    background: #6395c4;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.coach .btn.small:hover {
+    background: #2b369b;
+}
+
+/*seccion de las sedes*/
+.sedes {
+    padding: 100px 0;
+    text-align: center;
+    background-color: #b4d9ff15;
+}
+
+.sedes-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 1rem 2rem 3rem 4remx;
+}
+
+/* Tarjetas de sedes */
+.section-card {
+    flex: 0 0 100px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sedes .section-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen de la sede */
+.sedes .section-card .thumb {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.sedes .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-bottom: 3px solid #6395c4;
+}
+
+/* Texto dentro de la tarjeta */
+.sedes .card-body {
+    padding: 20px;
+}
+
+.sedes .card-body h4 {
+    color: #000;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.sedes .card-body .meta {
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Animación al hacer scroll */
+.sedes .section-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease-out;
+}
+
+.sedes .section-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer  */
+.site-footer {
+    background: #111;
+    color: #f0f0f0;
+    padding: 3rem 0 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* estilo de los encabezados del footer */
+.footer-grid h4 {
+    color: #6382c4;
+    margin-bottom: 1rem;
+}
+
+/* estilo de los enlaces de navegación del footer */
+.footer-nav nav a {
+    display: inline-block;
+    color: #f0f0f0;
+    text-decoration: none;
+    margin-right: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-nav nav a:hover {
+
+    color: #656ddf;
+}
+
+/* estilo de la lista de redes sociales del footer */
+.footer-social ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-social li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-social a {
+    color: #f0f0f0;
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    color: #6382c4;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* Móviles (hasta 600px) */
+@media (max-width: 600px) {
+
+    /* Hero */
+    .hero {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        padding: 3rem 1rem;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero-text {
+        font-size: 1.2rem;
+        padding: 0;
+    }
+
+    /* Navegación */
+    .menu-btn {
+        display: block;
+    }
+
+    .nav {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        background: #fff;
+        border-top: 1px solid #eee;
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu-toggle:checked+.menu-btn+.nav {
+        display: flex;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        padding: 1rem 0;
+        gap: 1rem;
+    }
+
+    /* Tarjetas */
+    .ofertas .section-card,
+    .coach .section-card,
+    .sedes .section-card {
+        align-items: center;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* Ajustes generales */
+    body {
+        font-size: 0.9rem;
+    }
+}
+
+/* 📱 Tablets (601px - 900px) */
+@media (max-width: 900px) {
+    .hero-text {
+        font-size: 1.5rem;
+    }
+
+    .ofertas .section-card,
+    .coach .section-card,
+    .sedes .section-card {
+
+        flex: 0 0 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+    }
+
+    .nav ul {
+        gap: 1rem;
+    }
+
+    /* Navegación */
+    .menu-btn {
+        display: block;
+    }
+
+    .nav {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        background: #fff;
+        border-top: 1px solid #eee;
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu-toggle:checked+.menu-btn+.nav {
+        display: flex;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        padding: 1rem 0;
+        gap: 1rem;
+    }
+}
+
+/* 💻 Pantallas grandes (más de 1200px) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+}
