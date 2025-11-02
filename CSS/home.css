@@ -188,7 +188,7 @@ body {
 
 .tittle {
     text-align: center;
-    padding: 2rem;
+    padding: 0;
 }
 
 .tittle h2 {
@@ -204,13 +204,14 @@ body {
 
 .carousel-container {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     width: 100%;
     padding: 2rem 0;
 }
 
 .carousel-track {
     display: flex;
+    align-items: stretch;
     transition: transform 0.5s ease-in-out;
 }
 
@@ -225,12 +226,27 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 350px;
+    height: auto;
+    min-height: 350px;
 }
 
 .ofertas .section-card:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.section-card .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.section-card .card-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
 }
 
 .card-body {
@@ -245,6 +261,8 @@ body {
     margin-bottom: 0.5rem;
     color: #000000;
     line-height: 1.5;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dbdbdb;
 }
 
 .card-body .meta {
@@ -252,12 +270,7 @@ body {
     color: #444444;
     margin-bottom: 1rem;
     line-height: 1.6;
-}
-
-.card-actions {
-    margin-top: auto;
-    display: flex;
-    justify-content: flex-start;
+    text-align: left;
 }
 
 /* Botón */
@@ -298,84 +311,8 @@ body {
     right: -0.5rem;
 }
 
-
-/* Sección de entrenadores */
-.coach {
-    padding: 4rem 2rem;
-    background-color: #b4d9ff15;
-}
-
-.coach .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-/* Tarjetas de entrenadores */
-.coach .section-card {
-    width: 100%;
-    max-width: 350px;
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    overflow: hidden;
-    text-align: center;
-}
-
-.coach .section-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* Imagen */
-.coach .thumb img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 12px;
-    border: 1px solid blue;
-}
-
-/* Texto */
-.coach .card-body {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.coach .card-body h3 {
-    color: #000;
-    margin-bottom: 0.5rem;
-}
-
-.coach h4 {
-    line-height: 2;
-}
-
-.coach .meta {
-    color: #444;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-}
-
-/* Botón */
-.coach .card-actions {
-    margin-top: 1rem;
-}
-
-.coach .btn.small {
-    background: #6395c4;
-    color: white;
-    padding: 0.5rem 1.2rem;
-    border-radius: 6px;
-    text-decoration: none;
-}
-
-.coach .btn.small:hover {
-    background: #2b369b;
+#ofertas {
+    border-bottom: 1px solid #dbdbdb;
 }
 
 /*seccion de las sedes*/
@@ -391,7 +328,7 @@ body {
     align-items: stretch;
     gap: 2rem;
     flex-wrap: wrap;
-    padding: 1rem 2rem 3rem 4remx;
+    padding: 1rem 2rem 3rem 4rem;
 }
 
 /* Tarjetas de sedes */
@@ -437,9 +374,9 @@ body {
 }
 
 .sedes .card-body .meta {
+    text-align: center;
     color: #444;
     font-size: 1rem;
-    line-height: 1.5;
 }
 
 /* Animación al hacer scroll */
@@ -452,6 +389,167 @@ body {
 .sedes .section-card.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/*boton de ver sede*/
+.boton-modal {
+    padding: 10px;
+    background-color: #fff;
+}
+
+.boton-modal label {
+    padding: 10px 15px;
+    background-color: #2b369b;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.boton-modal label:hover {
+    background-color: #6382c4;
+}
+
+.modal-toggle {
+    display: none;
+}
+
+.container-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    display: none;
+    z-index: 9999;
+}
+
+.modal-toggle:checked+.container-modal {
+    display: flex;
+}
+
+.modal-toggle:checked~.container-modal {
+    position: fixed;
+}
+
+/* Contenido del modal */
+.content-modal {
+    background: #fff;
+    width: 1200px;
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.content-modal .thumb img {
+    width: calc(100% + 50px);
+    margin: -25px -25px 20px -25px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+.content-modal .card-body {
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.card-body .descripcion {
+    text-align: left;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+/* Entrenadores */
+.coach-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.entrenadores .titulo {
+    margin-top: 40px;
+    color: #222;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.entrenadores .parrafo {
+    margin-bottom: 50px;
+    line-height: 1.5;
+}
+
+.coach-card {
+    background: #b4daff54;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+}
+
+.coach-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    border-radius: 0;
+    margin: 0;
+}
+
+.coach-card h4 {
+    color: #2b369b;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.coach-card .btn {
+    background-color: #2b369b;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background 0.3s;
+    margin-bottom: 20px;
+}
+
+.coach-card .btn:hover {
+    background-color: #4a5cc1;
+}
+
+.card-body .contacto {
+    text-align: center;
+
+}
+
+/* Botón cerrar */
+.btn-cerrar {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.btn-cerrar label {
+    padding: 8px 35px;
+    background-color: #2b369b;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-cerrar label:hover {
+    background-color: #4a5cc1;
 }
 
 /* Footer  */
@@ -514,10 +612,64 @@ body {
     color: #aaa;
 }
 
-/* Móviles (hasta 600px) */
-@media (max-width: 600px) {
+/*Tablets (hasta 900px)*/
+@media (max-width: 900px) {
 
-    /* Hero */
+    .hero-text {
+        font-size: 1.5rem;
+    }
+
+    .ofertas .section-card,
+    .coach .section-card,
+    .sedes .section-card {
+        flex: 0 0 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        background: #fff;
+        border-top: 1px solid #eee;
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu-toggle:checked+.menu-btn+.nav {
+        display: flex;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        padding: 1rem 0;
+        gap: 1rem;
+    }
+
+    .content-modal {
+        width: 80%;
+        max-height: 80vh;
+        overflow-y: auto;
+        padding: 1.5rem;
+    }
+
+    .content-modal img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        object-fit: cover;
+    }
+}
+
+/* Móviles (hasta 768px)*/
+@media (max-width: 768px) {
+
     .hero {
         flex-direction: column;
         height: auto;
@@ -532,95 +684,65 @@ body {
         padding: 0;
     }
 
-    /* Navegación */
-    .menu-btn {
-        display: block;
+    .ofertas .carousel-container {
+        overflow: visible;
     }
 
-    .nav {
-        position: absolute;
-        top: 80px;
-        right: 0;
-        width: 100%;
-        background: #fff;
-        border-top: 1px solid #eee;
-        display: none;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .menu-toggle:checked+.menu-btn+.nav {
+    .carousel-track {
         display: flex;
-    }
-
-    .nav ul {
         flex-direction: column;
-        padding: 1rem 0;
-        gap: 1rem;
+        align-items: center;
+        gap: 1.5rem;
     }
 
-    /* Tarjetas */
+    .ofertas .section-card {
+        flex: none;
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .ofertas .carousel-btn {
+        display: none;
+    }
+
     .ofertas .section-card,
     .coach .section-card,
     .sedes .section-card {
         align-items: center;
-        flex: 0 0 100%;
         max-width: 100%;
     }
 
-    /* Ajustes generales */
     body {
         font-size: 0.9rem;
     }
-}
 
-/* 📱 Tablets (601px - 900px) */
-@media (max-width: 900px) {
-    .hero-text {
-        font-size: 1.5rem;
+    .content-modal {
+        width: 90%;
+        overflow-y: auto;
+        max-height: 80vh;
+
     }
 
-    .ofertas .section-card,
-    .coach .section-card,
-    .sedes .section-card {
-
-        flex: 0 0 calc(50% - 1rem);
-        max-width: calc(50% - 1rem);
-    }
-
-    .nav ul {
-        gap: 1rem;
-    }
-
-    /* Navegación */
-    .menu-btn {
-        display: block;
-    }
-
-    .nav {
-        position: absolute;
-        top: 80px;
-        right: 0;
+    .content-modal img {
         width: 100%;
-        background: #fff;
-        border-top: 1px solid #eee;
-        display: none;
-        flex-direction: column;
-        text-align: center;
+        height: auto;
+        border-radius: 10px;
+        object-fit: cover;
     }
 
-    .menu-toggle:checked+.menu-btn+.nav {
-        display: flex;
+    .content-modal .card-body {
+        font-size: 1rem;
+        line-height: 1.5;
     }
 
-    .nav ul {
-        flex-direction: column;
-        padding: 1rem 0;
-        gap: 1rem;
+    .card-body .descripcion {
+        text-align: left;
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
-/* 💻 Pantallas grandes (más de 1200px) */
+/*Pantallas muy grandes (más de 1200px)*/
 @media (min-width: 1200px) {
     .container {
         max-width: 1400px;
