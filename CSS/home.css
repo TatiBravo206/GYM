@@ -266,7 +266,7 @@ body {
 }
 
 .card-body .meta {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #444444;
     margin-bottom: 1rem;
     line-height: 1.6;
@@ -507,7 +507,7 @@ body {
 }
 
 .coach-card h4 {
-    color: #2b369b;
+    color: #000000;
     margin-top: 15px;
     margin-bottom: 5px;
 }
@@ -712,10 +712,6 @@ body {
         max-width: 100%;
     }
 
-    body {
-        font-size: 0.9rem;
-    }
-
     .content-modal {
         width: 90%;
         overflow-y: auto;
@@ -728,11 +724,6 @@ body {
         height: auto;
         border-radius: 10px;
         object-fit: cover;
-    }
-
-    .content-modal .card-body {
-        font-size: 1rem;
-        line-height: 1.5;
     }
 
     .card-body .descripcion {
