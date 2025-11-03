@@ -8,6 +8,7 @@
     <link rel="icon" type="image/x-icon" href="img/icono.ico" />
     <link rel="stylesheet" href="CSS/home.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 
@@ -216,16 +217,16 @@
                                 <div class="coach-container">
                                     <article class="coach-card">
                                         <img src="img/coach4.jpg" alt="Luis Peña">
-                                        <h4>Luis Peña</h4>
-                                        <p>🏃‍♀️ Cardio y entrenamiento funcional</p>
-                                        <p>Apasionado por el movimiento y la salud integral. Más de 4 años de
+                                        <h4 class="name-coach">Luis Peña</h4>
+                                        <p class="descripcion-coach">🏃‍♀️ Cardio y entrenamiento funcional<br>
+                                            Apasionado por el movimiento y la salud integral. Más de 4 años de
                                             experiencia.</p>
                                         <a href="HTML/login.html" class="btn small">Reservar Sesión</a>
                                     </article>
 
                                     <article class="coach-card">
                                         <img src="img/coach5.webp" alt="Andrés Rojas">
-                                        <h4>Andrés Rojas</h4>
+                                        <h4 class="name-coach">Andrés Rojas</h4>
                                         <p>🏋️‍♂️ Musculación y fuerza</p>
                                         <p>Entrenador certificado, enfocado en desarrollo muscular y control postural.
                                         </p>
@@ -234,7 +235,7 @@
 
                                     <article class="coach-card">
                                         <img src="img/coach6.jpg" alt="Carlos Torres">
-                                        <h4>Carlos Torres</h4>
+                                        <h4 class="name-coach">Carlos Torres</h4>
                                         <p>🏋️‍♂️ Fuerza, crossfit y levantamiento</p>
                                         <p>Preparador físico certificado con amplia trayectoria en programas de alto
                                             rendimiento.</p>
@@ -294,13 +295,12 @@
                                 <div class="entrenadores">
                                     <h5 class="titulo">Perfiles de Entrenadores</h5>
                                     <p class="parrafo">Descubre a los entrenadores de la sede Colina y empieza a cumplir
-                                        tus
-                                        metas.</p>
+                                        tus metas.</p>
 
                                     <div class="coach-container">
                                         <article class="coach-card">
                                             <img src="img/coach7.jpeg" alt="Felipe Lozano">
-                                            <h4>Felipe Lozano</h4>
+                                            <h4 class="name-coach">Felipe Lozano</h4>
                                             <p>⚡ Entrenamiento funcional y resistencia</p>
                                             <p>Motivador nato, enfocado en mejorar tu energía y rendimiento físico.</p>
                                             <a href="HTML/login.html" class="btn small">Reservar Sesión</a>
@@ -308,7 +308,7 @@
 
                                         <article class="coach-card">
                                             <img src="img/coach8.jpg" alt="Diana Ruiz">
-                                            <h4>Diana Ruiz</h4>
+                                            <h4 class="name-coach">Diana Ruiz</h4>
                                             <p>🧠 Fitness mental y equilibrio corporal</p>
                                             <p>Experta en rutinas que combinan ejercicio físico con control mental y
                                                 respiración.</p>
@@ -317,7 +317,7 @@
 
                                         <article class="coach-card">
                                             <img src="img/coach9.jpg" alt="María Castillo">
-                                            <h4>María Castillo</h4>
+                                            <h4 class="name-coach">María Castillo</h4>
                                             <p>🧘 Yoga y bienestar corporal</p>
                                             <p>Especialista en equilibrio físico y mental mediante técnicas de
                                                 respiración y
@@ -368,7 +368,7 @@
                                 <p class="descripcion">
                                     Esta sede cuenta con máquinas de última generación para entrenamiento funcional,
                                     pesas, área de cardio y zona de estiramiento. <br>
-                                    ⏰ <strong>Horario de atención:</strong><br> 
+                                    ⏰ <strong>Horario de atención:</strong><br>
                                     Lunes a viernes de 5:00 a.m. a 09:00 p.m. <br>
                                     Sábados y domingos de 6:00 a.m. a 8:00 p.m.
                                 </p>
@@ -383,7 +383,7 @@
                                     <div class="coach-container">
                                         <article class="coach-card">
                                             <img src="img/coach1.jpg" alt="Juan Barrera">
-                                            <h4>Juan Barrera</h4>
+                                            <h4 class="name-coach">Juan Barrera</h4>
                                             <p>🥊 Boxeo, pesas, cardio</p>
                                             <p>Más de 5 años ayudando a mejorar el rendimiento físico de nuestros
                                                 miembros.</p>
@@ -392,7 +392,7 @@
 
                                         <article class="coach-card">
                                             <img src="img/coach2.png" alt="Camilo Torres">
-                                            <h4>Camilo Torres</h4>
+                                            <h4 class="name-coach">Camilo Torres</h4>
                                             <p>💪 Fuerza y entrenamiento funcional</p>
                                             <p>Entrenador certificado, experto en fuerza y rehabilitación funcional.</p>
                                             <a href="HTML/login.html" class="btn small">Reservar Sesión</a>
@@ -400,7 +400,7 @@
 
                                         <article class="coach-card">
                                             <img src="img/coach3.jpg" alt="Karen Garzón">
-                                            <h4>Karen Garzón</h4>
+                                            <h4 class="name-coach">Karen Garzón</h4>
                                             <p>🥗 Nutrición y planes personalizados</p>
                                             <p>Nutricionista deportiva enfocada en equilibrio entre alimentación y
                                                 entrenamiento.</p>
@@ -456,10 +456,12 @@
                 <div class="footer-social">
                     <h4>Síguenos</h4>
                     <ul>
-                        <li><a href="#" aria-label="Instagram">@Kumba</a></li>
-                        <li><a href="#" aria-label="Whatsapp">Whatsapp</a></li>
-                        <li><a href="#" aria-label="Facebook">Facebook</a></li>
-                        <li><a href="#" aria-label="TikTok">TikTok</a></li>
+                        <li><a href="https://www.facebook.com/" target="_blank">
+                                <i class="fa-brands fa-facebook"></i> Kumba</a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank">
+                                <i class="fa-brands fa-instagram"></i> @Kumba.</a></li>
+                        <li><a href="https://www.tiktok.com/" target="_blank">
+                                <i class="fa-brands fa-tiktok"></i> @kumba.</a></li>
                     </ul>
                 </div>
 

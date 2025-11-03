@@ -235,6 +235,7 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
+/*sedes*/
 .section-card .card-body {
     flex-grow: 1;
     display: flex;
@@ -504,12 +505,18 @@ body {
     display: block;
     border-radius: 0;
     margin: 0;
+    margin-bottom: 20px;
 }
 
-.coach-card h4 {
+.coach-card .name-coach {
     color: #000000;
-    margin-top: 15px;
-    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.coach-card .descripcion-coach {
+    color: #222;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .coach-card .btn {
@@ -519,7 +526,7 @@ body {
     border-radius: 5px;
     text-decoration: none;
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 20px;
     transition: background 0.3s;
     margin-bottom: 20px;
 }
@@ -587,21 +594,41 @@ body {
 }
 
 /* estilo de la lista de redes sociales del footer */
+.footer-social {
+    text-align: left;
+}
+
+.footer-social h4 {
+    color: #6382c4;
+    margin-bottom: 1rem;
+}
+
 .footer-social ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .footer-social li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
 }
 
 .footer-social a {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* espacio entre icono y texto */
     color: #f0f0f0;
+    font-size: 1rem;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .footer-social a:hover {
+    color: #6382c4;
+}
+
+.footer-social i {
+    font-size: 1.3rem;
     color: #6382c4;
 }
 
@@ -650,6 +677,21 @@ body {
         flex-direction: column;
         padding: 1rem 0;
         gap: 1rem;
+    }
+
+    .card-body .meta,
+    .card-body .descripcion {
+        font-size: 1.2rem;
+    }
+    .sedes-container {
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .sedes .section-card {
+        flex: 0 0 80%;
+        max-width: 400px;
+        margin: 0 auto 2rem;
     }
 
     .content-modal {
@@ -710,6 +752,18 @@ body {
     .sedes .section-card {
         align-items: center;
         max-width: 100%;
+    }
+
+    .sedes-container {
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .sedes .section-card {
+        flex: none;
+        width: 90%;
+        max-width: 350px;
+        margin: 0 auto 2rem;
     }
 
     .content-modal {
