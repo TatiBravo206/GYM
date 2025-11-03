@@ -45,3 +45,18 @@ document.querySelectorAll('.nav a').forEach(link => {
     if (menuToggle?.checked) menuToggle.checked = false;
   });
 });
+
+// Cerrar el menú si se hace clic fuera de él
+document.addEventListener('click', (e) => {
+  const nav = document.querySelector('.nav');
+  const menuLabel = document.querySelector('label[for="menu-toggle"]');
+
+  if (
+    menuToggle?.checked &&
+    !nav.contains(e.target) &&
+    e.target !== menuToggle &&
+    !menuLabel.contains(e.target)
+  ) {
+    menuToggle.checked = false;
+  }
+});
