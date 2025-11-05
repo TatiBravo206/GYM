@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const documento = document.getElementById('documento').value;
         const telefono = document.getElementById('telefono').value;
         const plan = document.getElementById('plan').value;
-        const sede = document.getElementById('sede').value;
         const email = document.getElementById('email').value;
         const contraseña = document.getElementById('contraseña').value;
 
@@ -26,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
             documento,
             telefono,
             plan,
-            sede,
             email,
             contraseña
         };

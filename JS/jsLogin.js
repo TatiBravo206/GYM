@@ -18,8 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Comparar las credenciales
             if (emailInput === usuarioData.email && passwordInput === usuarioData.contraseña) {
                 alert('¡Inicio de sesión exitoso!');
+                // guarda el nombre completo para usarlo en la otra página
+                localStorage.setItem("usuarioLogueado", `${usuarioData.nombre} ${usuarioData.apellido}`);
+
                 // Aquí puedes redirigir al usuario a su página de inicio
-                window.location.href = '../HTML/horarios.html'; // Ejemplo de redirección
+                window.location.href = '../HTML/clases.html';
             } else {
                 alert('Correo electrónico o contraseña incorrectos.');
             }

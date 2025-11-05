@@ -51,7 +51,6 @@ body {
 
 .texto-formulario {
     margin-bottom: 15px;
-    /* Espacio debajo del encabezado y párrafo */
 }
 
 .formulario h2 {
@@ -63,11 +62,9 @@ body {
 
 .formulario p {
     font-size: 14px;
-    /* Tamaño de párrafo igual que en el registro */
     margin-bottom: 30px;
     color: #555;
     text-align: center;
-    /* Alinea el texto al centro */
 }
 
 .input {
@@ -140,25 +137,41 @@ body {
 
 /* Media Queries para dispositivos móviles */
 @media (max-width: 768px) {
-    .contenedor-formulario {
-        flex-direction: column;
-        width: 100%;
-        max-width: 400px;
+    body {
         height: auto;
-        border-radius: 20px;
+        min-height: 100vh;
+        align-items: flex-start;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .contenedor-formulario {
+        width: 100%;
+        max-width: none;
+        height: auto;
+        min-height: 100vh;
+        flex-direction: column;
+        border-radius: 0;
+        box-shadow: none;
     }
 
     .imagen-formulario {
-        flex: 1;
-        background-position: center center;
-        background-size: cover;
-        height: 200px;
-        border-radius: 20px 20px 0 0;
         display: block;
+        height: 180px;
+        flex: none;
+        background-position: center top;
+        background-size: cover;
     }
 
     .formulario {
-        border-radius: 0 0 20px 20px;
+        flex: none;
+        width: 100%;
+        padding: 30px;
         padding-top: 20px;
+    }
+
+    .formulario h2 {
+        padding-top: 0;
+        font-size: 24px;
     }
 }

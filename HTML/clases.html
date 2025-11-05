@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kumba | Sedes</title>
+  <link rel="stylesheet" href="../CSS/clases.css">
+  <link rel="icon" type="image/x-icon" href="../img/icono.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Sedes</h1>
+    <button id="cerrarSesion" class="cerrarsesion">
+      <i class="fa-solid fa-sign-out"></i> Cerrar sesión
+    </button>
+  </header>
+
+  <!-- Sedes -->
+  <div class="sedes-container">
+    <div class="sede">
+      <img src="../img/chapinero.jpg" alt="Chapinero">
+      <div class="sede-info">
+        <h3>Chapinero</h3>
+        <p>📍 Calle 85 #7 – 13, Carrera, Bogotá D.C.</p>
+        <button onclick="mostrarCalendario('cal1')">Ver Horarios</button>
+        <button onclick="mostrarRutinas('rut1')">Ver Rutinas</button>
+      </div>
+    </div>
+
+    <div class="sede">
+      <img src="../img/colina.png" alt="Colina">
+      <div class="sede-info">
+        <h3>Colina</h3>
+        <p>📍 Av. Boyacá, Carrera 72 con Calle 146b, Bogotá D.C.</p>
+        <button onclick="mostrarCalendario('cal2')">Ver Horarios</button>
+        <button onclick="mostrarRutinas('rut2')">Ver Rutinas</button>
+      </div>
+    </div>
+
+    <div class="sede">
+      <img src="../img/usaquen.jpg" alt="Usaquén">
+      <div class="sede-info">
+        <h3>Usaquén</h3>
+        <p>📍 Cra 19 #143 – 08, Bogotá D.C.</p>
+        <button onclick="mostrarCalendario('cal3')">Ver Horarios</button>
+        <button onclick="mostrarRutinas('rut2')">Ver Rutinas</button>
+      </div>
+    </div>
+
+    <div class="sede">
+      <img src="../img/norte.jpg" alt="Bogotá Norte">
+      <div class="sede-info">
+        <h3>Bogotá Norte</h3>
+        <p>📍 Calle 116 #50-10, Bogotá D.C.</p>
+        <button onclick="mostrarCalendario('cal4')">Ver Horarios</button>
+        <button onclick="mostrarRutinas('rut4')">Ver Rutinas</button>
+      </div>
+    </div>
+
+    <div class="sede">
+      <img src="../img/centro.comercial.jpg" alt="Centro Comercial">
+      <div class="sede-info">
+        <h3>Centro Comercial</h3>
+        <p>📍 Av. 68 #40-22, Bogotá D.C.</p>
+        <button onclick="mostrarCalendario('cal5')">Ver Horarios</button>
+        <button onclick="mostrarRutinas('rut5')">Ver Rutinas</button>
+      </div>
+    </div>
+
+    <div class="sede">
+      <img src="../img/candelaria.jpg" alt="La Candelaria">
+      <div class="sede-info">
+        <h3>La Candelaria</h3>
+        <p>📍 Calle 10 #5-90, Bogotá D.C.</p>
+        <button onclick="mostrarCalendario('cal6')">Ver Horarios</button>
+        <button onclick="mostrarRutinas('rut6')">Ver Rutinas</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Calendarios -->
+  <div id="cal1" class="calendario"></div>
+  <div id="cal2" class="calendario"></div>
+  <div id="cal3" class="calendario"></div>
+  <div id="cal4" class="calendario"></div>
+  <div id="cal5" class="calendario"></div>
+  <div id="cal6" class="calendario"></div>
+
+  <!--rutinas-->
+  <div id="rut1" class="rutinas"></div>
+  <div id="rut2" class="rutinas"></div>
+  <div id="rut3" class="rutinas"></div>
+  <div id="rut4" class="rutinas"></div>
+  <div id="rut5" class="rutinas"></div>
+  <div id="rut6" class="rutinas"></div>
+
+  <!-- Popup inscripción -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h3>¡Inscripción exitosa!</h3>
+      <p id="infoClase">¡Te has inscrito a la clase!</p>
+      <button onclick="cerrarPopup()">Cerrar</button>
+    </div>
+  </div>
+
+  <script src="../JS/clases.js"></script>
+</body>
+
+</html>

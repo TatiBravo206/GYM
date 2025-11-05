@@ -96,8 +96,6 @@ body {
     color: white;
 }
 
-
-
 .menu-toggle {
     display: none;
 }
@@ -654,7 +652,7 @@ body {
         max-width: calc(50% - 1rem);
     }
 
-     /* Botón del menú hamburguesa */
+    /* Botón del menú hamburguesa */
     .menu-btn {
         display: block;
         cursor: pointer;
@@ -680,7 +678,7 @@ body {
     }
 
     /* Mostrar menú cuando se activa */
-    .menu-toggle:checked + .menu-btn + .nav {
+    .menu-toggle:checked+.menu-btn+.nav {
         display: flex;
         opacity: 1;
         transform: translateY(0);
