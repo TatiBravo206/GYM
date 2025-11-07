@@ -1,33 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f4f6fb;
+  --header-bg: #2b369b;
+  --text: #ffffff;
+  --card: #f8fbff;
+  --card-text: #071427;
+  --accent: #4150d0;
+  --accent-hover: #5163f0;
+  --radius: 12px;
+}
+
 body {
   font-family: "Poppins", Arial, sans-serif;
-  background-color: #f4f6fb;
+  background: var(--bg);
+  color: var(--card-text);
   margin: 0;
 }
 
+/* HEADER */
 header {
-  background-color: #1e2a78;
-  color: white;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  font-weight: bold;
+  justify-content: center;
+  position: relative;
+  padding: 18px 24px;
+  background-color: var(--header-bg);
+  color: var(--text);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
 }
 
-/* Botón de cerrar sesión separado */
-.cerrarsesion {
-  background-color: #ce0000;
-  border: none;
-  color: white;
-  padding: 8px 14px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 0.9rem;
+header h1 {
+  flex: 1;
+  text-align: center;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 2.2rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  margin: 0;
+}
+
+header nav {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.perfil {
+  border: 2px solid #ffffff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 5px;
-  transition: background-color 0.3s ease;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.perfil i {
+  font-size: 1.2rem;
+}
+
+#nombreUsuario {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+/* MENÚ DESPLEGABLE DEL PERFIL */
+.menuPerfil {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: #ffffff;
+  color: var(--card-text);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  list-style: none;
+  padding: 10px 0;
+  margin: 10px 0 0;
+  min-width: 180px;
+  z-index: 100;
+}
+
+.menuPerfil li {
+  padding: 8px 16px;
+}
+
+.menuPerfil li a,
+.menuPerfil li button {
+  color: var(--card-text);
+  text-decoration: none;
+  font-weight: 500;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.menuPerfil li:hover {
+  background: rgba(43, 54, 155, 0.1);
+}
+
+.menuPerfil.activo {
+  display: block;
+}
+
+.btn-historial i,
+.cerrarsesion i {
+  font-size: 1rem;
+}
+
+.cerrarsesion {
+  color: #ce0000 !important;
+  font-weight: 600;
 }
 
 .sedes-container {
@@ -71,7 +169,7 @@ header {
 }
 
 .sede button {
-  background-color: #1e2a78;
+  background-color: #2b369b;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -82,7 +180,7 @@ header {
 }
 
 .sede button:hover {
-  background-color: #2f40a0;
+  background-color: #4a5cc1;
 }
 
 /* Calendario */
@@ -137,6 +235,9 @@ header {
   display: none;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
+  overflow-y: auto; /* ✅ permite desplazarse cuando el contenido es largo */
+  padding: 20px;
 }
 
 .popup-content {
@@ -145,14 +246,18 @@ header {
   border-radius: 10px;
   max-width: 400px;
   text-align: center;
+  max-height: 80vh; /* ✅ evita que crezca más que la pantalla */
+  overflow-y: auto;
 }
 
 .popup-content h3 {
-  color: #1e2a78;
+  color: #2b369b;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
 }
 
 .popup-content button {
-  background-color: #1e2a78;
+  background-color: #2b369b;
   color: white;
   border: none;
   padding: 8px 16px;
@@ -162,79 +267,44 @@ header {
 }
 
 .popup-content button:hover {
-  background-color: #2f40a0;
+  background-color: #4a5cc1;
 }
 
-
-/* --- Estilos para la Sección de Rutinas --- */
-.rutinas {
-  display: none;
-  margin: 20px auto;
-  max-width: 1100px;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-}
-
-.rutinas h4 {
-  color: #1e2a78;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.grid-rutinas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-.rutina-card {
-  background-color: #f1f3ff;
-  border: 1px solid #dcdcdc;
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+/* Popup específico para historial */
+.historial-popup {
+  max-width: 600px;
+  width: 25%;
+  max-height: 75vh;
   text-align: left;
+  overflow-y: auto;
 }
 
-.rutina-card h5 {
-  color: #ff6b35;
-  margin-bottom: 10px;
-  font-size: 1.1rem;
+.historial-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  
 }
-
-.rutina-card p {
-  font-size: 0.9rem;
-  margin-bottom: 5px;
-}
-
-.rutina-card span {
-  font-weight: 600;
-  color: #1e2a78;
-}
-
-.rutina-card button {
-  width: 100%;
-  background-color: #1e2a78;
-  color: white;
-  border: none;
-  padding: 8px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 15px;
-  transition: background-color 0.3s;
-}
-
-.rutina-card button:hover {
-  background-color: #2f40a0;
-}
-
 
 @media (max-width: 768px) {
   header {
-    padding: 15px 20px;
-    font-size: 1rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  header nav {
+    position: static;
+    transform: none;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .perfil {
+    padding: 8px 10px;
+    border-radius: 8px;
   }
 
   .cerrarsesion {
@@ -242,8 +312,11 @@ header {
     font-size: 0.8rem;
   }
 
-  .calendario,
-  .rutinas {
+  .sede {
+    width: 85%;
+  }
+
+  .calendario {
     width: 95%;
     margin: 20px auto;
     padding: 15px;
@@ -266,4 +339,58 @@ header {
     overflow-wrap: break-word;
   }
 
+  .popup-content {
+    width: 90%;
+    padding: 16px;
+    max-height: 80vh;
+  }
+
+  .popup-content h3 {
+    font-size: 1.1rem;
+  }
+
+  /* Botón del historial */
+  .btn-historial {
+    background-color: #1e2a78;
+    border: none;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-historial:hover {
+    background-color: #4a5cc1;
+  }
+
+  .acciones-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  /* Popup historial */
+  .historial-popup {
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  .historial-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    text-align: left;
+  }
+
+  .historial-item strong {
+    color: #1e2a78;
+  }
+
+  #listaHistorial p {
+    margin: 8px 0;
+  }
 }

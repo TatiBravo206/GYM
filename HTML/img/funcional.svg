@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="100%" height="100%" fill="#eef7ff"/>
+  <g transform="translate(120,60)" fill="#0a66ff">
+    <path d="M40 220 q60 -180 200 -180 q140 0 200 180" stroke="#0a66ff" stroke-width="20" fill="none" stroke-linecap="round"/>
+  </g>
+  <text x="400" y="420" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#0b0b0b" text-anchor="middle">Funcional</text>
+</svg>

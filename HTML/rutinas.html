@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumba | Rutinas Personalizadas</title>
+    <link rel="stylesheet" href="../CSS/rutinas.css">
+    <link rel="icon" type="image/x-icon" href="../img/icono.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Kumba</h1>
+        <nav>
+            <div class="perfil" id="perfilUsuario">
+                <i class="fa-solid fa-user"></i>
+                <span id="nombreUsuario"></span>
+                <i class="fa-solid fa-chevron-down flecha"></i>
+                <ul class="menuPerfil" id="menuPerfil">
+                    <li><a href="../HTML/clases.html"><i class="fa-solid fa-calendar-days"></i> Horarios de clases</a>
+                    </li>
+                    <li><button id="cerrarSesion" class="cerrarsesion">
+                            <i class="fa-solid fa-sign-out"></i> Cerrar sesión</button></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="hero">
+                <input id="search" type="search" placeholder="Buscar rutina (ej. masa, peso, tonificar)">
+                <select id="filter-level" class="nivels">
+                    <option value="all">Todos los niveles</option>
+                    <option value="Principiante">Principiante</option>
+                    <option value="Intermedio">Intermedio</option>
+                    <option value="Avanzado">Avanzado</option>
+                </select>
+            </div>
+            <div class="text">
+                Selecciona una rutina para ver los ejercicios detallados
+            </div>
+        </div>
+
+        <div class="rutinas" id="rutinas-container">
+            <!-- Las tarjetas se generan dinámicamente desde JS -->
+        </div>
+    </section>
+
+    <div id="rutina-detalles" class="rutina-detalle"></div>
+    <script src="../JS/rutinas.js"></script>
+</body>
+
+</html>

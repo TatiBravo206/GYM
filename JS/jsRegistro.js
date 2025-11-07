@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Guardar el objeto de datos en localStorage
         localStorage.setItem('usuarioRegistrado', JSON.stringify(usuarioData));
 
-        alert('¡Registro exitoso! Ahora puedes iniciar sesión.');
         // Redirige al login.html
         window.location.href = '../HTML/login.html';
     });

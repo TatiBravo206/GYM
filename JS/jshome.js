@@ -26,18 +26,6 @@ prevButton.addEventListener('click', () => {
   }
 });
 
-// Animación al hacer scroll (para sedes)
-const sedesCards = document.querySelectorAll('.sedes .section-card');
-
-window.addEventListener('scroll', () => {
-  sedesCards.forEach(card => {
-    const cardTop = card.getBoundingClientRect().top;
-    if (cardTop < window.innerHeight - 100) {
-      card.classList.add('visible');
-    }
-  });
-});
-
 // Cerrar menú en móvil 
 const menuToggle = document.getElementById('menu-toggle');
 document.querySelectorAll('.nav a').forEach(link => {

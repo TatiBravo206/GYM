@@ -1,18 +1,49 @@
-//Boton cerrar sesion
-const cerrarSesionBtn = document.getElementById("cerrarSesion");
-
+// === AVATAR DE USUARIO ===
 const usuario = localStorage.getItem("usuarioLogueado");
+const perfilUsuarioBox = document.getElementById("perfilUsuario"); 
+const nombreUsuarioSpan = document.getElementById("nombreUsuario");
+const menuPerfilDiv = document.getElementById("menuPerfil"); 
+const cerrarSesionBtn = document.getElementById("cerrarSesion");
+const btnHistorial = document.getElementById("btnHistorial");
 
+// Mostrar nombre del usuario logueado
+if (usuario && nombreUsuarioSpan) {
+  nombreUsuarioSpan.textContent = usuario;
+}
+
+// BOTÓN CERRAR SESIÓN 
 if (cerrarSesionBtn) {
   cerrarSesionBtn.addEventListener("click", () => {
     localStorage.removeItem("usuarioLogueado");
-    window.location.href = '../HTML/login.html';
+    localStorage.removeItem("historialClases");
+    window.location.href = '../index.html';
   });
 }
 
-// Clases y horarios del mes de noviembre para cada sede
+// MOSTRAR Y OCULTAR MENÚ PERFIL SOLO CON CLICK 
+if (perfilUsuarioBox && menuPerfilDiv) {
+  perfilUsuarioBox.addEventListener("click", (e) => {
+    e.stopPropagation();
+    menuPerfilDiv.style.display = 
+      menuPerfilDiv.style.display === "block" ? "none" : "block";
+  });
+
+  // Cerrar menú si se hace clic fuera del perfil
+  document.addEventListener("click", (e) => {
+    if (!perfilUsuarioBox.contains(e.target)) {
+      menuPerfilDiv.style.display = "none";
+    }
+  });
+}
+
+// BOTÓN HISTORIAL 
+if (btnHistorial) {
+  btnHistorial.addEventListener("click", mostrarHistorial);
+}
+
+// Clases por sede
 const clases = {
-  cal1: [ // Chapinero
+  cal1: [ 
     { dia: 3, nombre: "Zumba", profesor: "Ana López", hora: "9:00 AM" },
     { dia: 7, nombre: "Yoga", profesor: "Camila Ruiz", hora: "7:00 PM" },
     { dia: 12, nombre: "Pilates", profesor: "Sofía Martínez", hora: "11:00 AM" },
@@ -20,7 +51,7 @@ const clases = {
     { dia: 20, nombre: "Spinning", profesor: "David Ramírez", hora: "7:00 AM" },
     { dia: 25, nombre: "CrossFit", profesor: "Carlos Pérez", hora: "8:00 AM" }
   ],
-  cal2: [ // Colina
+  cal2: [ 
     { dia: 5, nombre: "Cardio Dance", profesor: "Andrés Pérez", hora: "6:00 PM" },
     { dia: 9, nombre: "Zumba", profesor: "Lucía Gómez", hora: "9:00 AM" },
     { dia: 13, nombre: "Yoga", profesor: "Carlos Ríos", hora: "5:00 PM" },
@@ -28,7 +59,7 @@ const clases = {
     { dia: 21, nombre: "Spinning", profesor: "Iván Torres", hora: "6:00 AM" },
     { dia: 28, nombre: "Pilates", profesor: "David Gómez", hora: "8:00 AM" }
   ],
-  cal3: [ // Usaquén
+   cal3: [ // Usaquén
     { dia: 4, nombre: "Pilates", profesor: "Sofía Martínez", hora: "10:00 AM" },
     { dia: 8, nombre: "CrossFit", profesor: "Laura Medina", hora: "6:30 PM" },
     { dia: 14, nombre: "Yoga", profesor: "Natalia Vargas", hora: "8:00 AM" },
@@ -62,109 +93,76 @@ const clases = {
   ]
 };
 
-//RUTINAS POR SEDE
-const rutinas = {
-  rut1: [ // Chapinero
-    { nombre: "Rutina Fuerza Máquinas", nivel: "Intermedio", foco: "Tren Superior", duracion: "60 min" },
-    { nombre: "Entrenamiento Funcional", nivel: "Básico", foco: "Cuerpo Completo", duracion: "45 min" }
-  ],
-  rut2: [ // Colina
-    { nombre: "Yoga Terapéutico", nivel: "Básico", foco: "Flexibilidad", duracion: "75 min" },
-    { nombre: "Cardio Sin Impacto", nivel: "Intermedio", foco: "Cardiovascular", duracion: "50 min" }
-  ],
-  rut3: [ // Usaquén
-    { nombre: "CrossFit Express", nivel: "Avanzado", foco: "Resistencia", duracion: "30 min" },
-    { nombre: "Pilates Suelo", nivel: "Básico", foco: "Core y Postura", duracion: "60 min" }
-  ],
-  // Agrega rutinas para rut4, rut5 y rut6
-  rut4: [],
-  rut5: [],
-  rut6: [],
-};
-
-// Función para mostrar el calendario de la sede
-function mostrarCalendario(id) {
-  // Oculta otros calendarios
+// Mostrar calendario y clases 
+function mostrarCalendario(id, sede) {
   document.querySelectorAll('.calendario').forEach(c => c.style.display = 'none');
   const cal = document.getElementById(id);
-  cal.innerHTML = `<h4>Consulta los horarios de las clases grupales disponibles e inscríbete</h4>
-  <h4>Calendario de clases para noviembre</h4>
+  cal.innerHTML = `<h4>Consulta los horarios de clases grupales</h4>
   <div class='grid-calendario'></div>`;
   const grid = cal.querySelector('.grid-calendario');
 
-  // Generar días del mes (1-30)
   for (let i = 1; i <= 30; i++) {
     const diaDiv = document.createElement('div');
     diaDiv.classList.add('dia');
-    diaDiv.innerHTML = i;
+    diaDiv.textContent = i;
 
-    // Buscar si hay una clase en ese día
-    const clase = clases[id] && clases[id].find(c => c.dia === i);
+    const clase = clases[id]?.find(c => c.dia === i);
     if (clase) {
       const claseDiv = document.createElement('div');
       claseDiv.classList.add('clase');
       claseDiv.textContent = `${clase.nombre} - ${clase.profesor} - ${clase.hora}`;
-      claseDiv.onclick = () => inscribirClase(clase);
+      claseDiv.onclick = () => inscribirClase(clase, sede);
       diaDiv.appendChild(claseDiv);
     }
-
     grid.appendChild(diaDiv);
   }
 
-  // Mostrar calendario
   cal.style.display = "block";
-
-  // Desplazar suavemente hacia la sección del calendario
   cal.scrollIntoView({ behavior: "smooth" });
 }
 
-// Función para manejar la inscripción a la clase
-function inscribirClase(clase) {
+// Inscripción y almacenamiento 
+function inscribirClase(clase, sede) {
   document.getElementById("popup").style.display = "flex";
   document.getElementById("infoClase").textContent =
-    `¡Te has inscrito a la clase de ${clase.nombre} con ${clase.profesor} a las ${clase.hora}!`;
+    `¡Te has inscrito a ${clase.nombre} con ${clase.profesor} en la sede ${sede} a las ${clase.hora}!`;
+
+  const historial = JSON.parse(localStorage.getItem("historialClases")) || [];
+  historial.push({ ...clase, sede });
+  localStorage.setItem("historialClases", JSON.stringify(historial));
 }
 
-// Función para cerrar el popup
 function cerrarPopup() {
   document.getElementById("popup").style.display = "none";
 }
 
+// Mostrar y cerrar historial 
+function mostrarHistorial() {
+  const popup = document.getElementById("popupHistorial");
+  const lista = document.getElementById("listaHistorial");
+  const historial = JSON.parse(localStorage.getItem("historialClases")) || [];
 
-
-
-// MOSTRAR RUTINAS
-function mostrarRutinas(id) {
-  // Oculta otros contenedores (calendarios y otras rutinas)
-  document.querySelectorAll('.calendario').forEach(c => c.style.display = 'none');
-  document.querySelectorAll('.rutinas').forEach(r => r.style.display = 'none');
-
-  const rutContainer = document.getElementById(id);
-  const rutinasData = rutinas[id];
-
-  let htmlContent = `<h4>Rutinas personalizadas en esta sede</h4>`;
-
-  if (rutinasData && rutinasData.length > 0) {
-    htmlContent += `<div class='grid-rutinas'>`;
-
-    rutinasData.forEach(rutina => {
-      htmlContent += `
-                <div class='rutina-card'>
-                    <h5>${rutina.nombre}</h5>
-                    <p>Nivel: <span>${rutina.nivel}</span></p>
-                    <p>Foco: <span>${rutina.foco}</span></p>
-                    <p>Duración: <span>${rutina.duracion}</span></p>
-                    <button onclick="alert('Iniciando rutina de ${rutina.nombre}')">Empezar</button>
-                </div>
-            `;
-    });
-
-    htmlContent += `</div>`;
+  if (historial.length === 0) {
+    lista.innerHTML = "<p>No te has inscrito a ninguna clase aún.</p>";
   } else {
-    htmlContent += `<p>No hay rutinas personalizadas disponibles para esta sede.</p>`;
+    lista.innerHTML = historial.map(c =>
+      `<div class='historial-item'>
+        <strong>${c.nombre}</strong><br>
+        Profesor: ${c.profesor}<br>
+        Hora: ${c.hora}<br>
+        Sede: ${c.sede}
+      </div>`
+    ).join("");
   }
-
-  rutContainer.innerHTML = htmlContent;
-  rutContainer.style.display = "block";
-  rutContainer.scrollIntoView({ behavior: "smooth" });
+  popup.style.display = "flex";
 }
+
+function cerrarHistorial() {
+  document.getElementById("popupHistorial").style.display = "none";
+}
+
+document.getElementById("popupHistorial").addEventListener("click", e => {
+  if (e.target.id === "popupHistorial") {
+    cerrarHistorial();
+  }
+});

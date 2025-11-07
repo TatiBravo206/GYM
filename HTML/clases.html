@@ -15,9 +15,21 @@
 
   <header>
     <h1>Sedes</h1>
-    <button id="cerrarSesion" class="cerrarsesion">
-      <i class="fa-solid fa-sign-out"></i> Cerrar sesión
-    </button>
+    <nav>
+      <div class="perfil" id="perfilUsuario">
+        <i class="fa-solid fa-user"></i>
+        <span id="nombreUsuario"></span>
+        <i class="fa-solid fa-chevron-down flecha"></i>
+        <ul class="menuPerfil" id="menuPerfil">
+          <li><button id="btnHistorial" class="btn-historial">
+              <i class="fa-solid fa-clock-rotate-left"></i> Historial de clases
+            </button></li>
+          <li><a href="../HTML/rutinas.html"><i class="fa-solid fa-dumbbell"></i> Rutinas personalizadas</a></li>
+          <li><button id="cerrarSesion" class="cerrarsesion">
+              <i class="fa-solid fa-sign-out"></i> Cerrar sesión</button></li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
   <!-- Sedes -->
@@ -27,8 +39,7 @@
       <div class="sede-info">
         <h3>Chapinero</h3>
         <p>📍 Calle 85 #7 – 13, Carrera, Bogotá D.C.</p>
-        <button onclick="mostrarCalendario('cal1')">Ver Horarios</button>
-        <button onclick="mostrarRutinas('rut1')">Ver Rutinas</button>
+        <button onclick="mostrarCalendario('cal1', 'Chapinero')">Ver Horarios</button>
       </div>
     </div>
 
@@ -37,8 +48,7 @@
       <div class="sede-info">
         <h3>Colina</h3>
         <p>📍 Av. Boyacá, Carrera 72 con Calle 146b, Bogotá D.C.</p>
-        <button onclick="mostrarCalendario('cal2')">Ver Horarios</button>
-        <button onclick="mostrarRutinas('rut2')">Ver Rutinas</button>
+        <button onclick="mostrarCalendario('cal2', 'Colina')">Ver Horarios</button>
       </div>
     </div>
 
@@ -47,8 +57,7 @@
       <div class="sede-info">
         <h3>Usaquén</h3>
         <p>📍 Cra 19 #143 – 08, Bogotá D.C.</p>
-        <button onclick="mostrarCalendario('cal3')">Ver Horarios</button>
-        <button onclick="mostrarRutinas('rut2')">Ver Rutinas</button>
+        <button onclick="mostrarCalendario('cal3', 'Usaquén')">Ver Horarios</button>
       </div>
     </div>
 
@@ -57,8 +66,7 @@
       <div class="sede-info">
         <h3>Bogotá Norte</h3>
         <p>📍 Calle 116 #50-10, Bogotá D.C.</p>
-        <button onclick="mostrarCalendario('cal4')">Ver Horarios</button>
-        <button onclick="mostrarRutinas('rut4')">Ver Rutinas</button>
+        <button onclick="mostrarCalendario('cal4', 'Bogotá Norte')">Ver Horarios</button>
       </div>
     </div>
 
@@ -67,8 +75,7 @@
       <div class="sede-info">
         <h3>Centro Comercial</h3>
         <p>📍 Av. 68 #40-22, Bogotá D.C.</p>
-        <button onclick="mostrarCalendario('cal5')">Ver Horarios</button>
-        <button onclick="mostrarRutinas('rut5')">Ver Rutinas</button>
+        <button onclick="mostrarCalendario('cal5', 'Centro Comercial')">Ver Horarios</button>
       </div>
     </div>
 
@@ -77,8 +84,7 @@
       <div class="sede-info">
         <h3>La Candelaria</h3>
         <p>📍 Calle 10 #5-90, Bogotá D.C.</p>
-        <button onclick="mostrarCalendario('cal6')">Ver Horarios</button>
-        <button onclick="mostrarRutinas('rut6')">Ver Rutinas</button>
+        <button onclick="mostrarCalendario('cal6', 'La Candelaria')">Ver Horarios</button>
       </div>
     </div>
   </div>
@@ -91,20 +97,21 @@
   <div id="cal5" class="calendario"></div>
   <div id="cal6" class="calendario"></div>
 
-  <!--rutinas-->
-  <div id="rut1" class="rutinas"></div>
-  <div id="rut2" class="rutinas"></div>
-  <div id="rut3" class="rutinas"></div>
-  <div id="rut4" class="rutinas"></div>
-  <div id="rut5" class="rutinas"></div>
-  <div id="rut6" class="rutinas"></div>
-
   <!-- Popup inscripción -->
   <div class="popup" id="popup">
     <div class="popup-content">
       <h3>¡Inscripción exitosa!</h3>
       <p id="infoClase">¡Te has inscrito a la clase!</p>
       <button onclick="cerrarPopup()">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Popup Historial -->
+  <div class="popup" id="popupHistorial">
+    <div class="popup-content historial-popup">
+      <h3>Historial de Clases Inscritas</h3>
+      <div id="listaHistorial"></div>
+      <button onclick="cerrarHistorial()">Cerrar</button>
     </div>
   </div>
 

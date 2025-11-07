@@ -7,9 +7,9 @@
 }
 
 :root {
-    --azul: #5570d6;
+    --azul: #4a5cc1;
     --azulOscuro: #0B2545;
-    --azulGris: #6385c4;
+    --azulGris: #2b369b;
     --blanco: #fff;
     --letra: black;
     --fuente: "Poppins", Arial, sans-serif;
@@ -96,11 +96,11 @@ body {
 
 .input input:focus,
 .input select:focus {
-    border-color: #668cff;
+    border-color: var(--azul);
 }
 
 .input input[type="submit"] {
-    background-color: #668cff;
+    background-color: var(--azulGris);
     color: #fff;
     border: none;
     border-radius: 25px;
@@ -120,7 +120,7 @@ body {
 }
 
 .registro-texto a {
-    color: #668cff;
+    color: var(--azulGris);
     text-decoration: none;
     font-weight: 600;
 }

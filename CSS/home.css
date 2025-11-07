@@ -61,7 +61,6 @@ body {
 }
 
 /* Navegación */
-/* Menú móvil */
 .nav ul {
     list-style: none;
     display: flex;
@@ -70,18 +69,17 @@ body {
 
 #login a,
 #registro a {
-    border: 1px solid #6382c4;
-    color: #6385c4;
+    border: 1px solid #2b369b;
+    color: #2b369b;
     transition: all 0.3s ease;
 }
 
 #login a:hover,
 #registro a:hover {
-    background: #638ac4;
+    background: #2b369b;
     color: white;
 }
 
-/* estilo de los enlaces del menu */
 .nav a {
     text-decoration: none;
     color: #222;
@@ -92,7 +90,7 @@ body {
 }
 
 .nav a:hover {
-    background: #6390c4;
+    background: #2b369b;
     color: white;
 }
 
@@ -100,7 +98,7 @@ body {
     display: none;
 }
 
-/* estilo del boton del menu movil */
+/* menu movil */
 .menu-btn {
     display: none;
     cursor: pointer;
@@ -164,7 +162,7 @@ body {
     display: inline-block;
     margin-top: 1.5rem;
     padding: 12px 28px;
-    background: #6395c4;
+    background: #2b369b;
     color: white;
     border: none;
     border-radius: 8px;
@@ -175,7 +173,7 @@ body {
 }
 
 .button:hover {
-    background: #2b369b;
+    background: #4a5cc1;
 }
 
 /*section ofertas*/
@@ -274,7 +272,7 @@ body {
 
 /* Botón */
 .ofertas .btn.small {
-    background: #6395c4;
+    background: #2b369b;
     color: #fff;
     padding: 0.4rem 1rem;
     border-radius: 6px;
@@ -284,7 +282,7 @@ body {
 }
 
 .ofertas .btn.small:hover {
-    background: #2b369b;
+    background: #4a5cc1;
 }
 
 /*botones flechas*/
@@ -316,6 +314,7 @@ body {
 
 /*seccion de las sedes*/
 .sedes {
+    
     padding: 100px 0;
     text-align: center;
     background-color: #b4d9ff15;
@@ -324,15 +323,15 @@ body {
 .sedes-container {
     display: flex;
     justify-content: center;
-    align-items: stretch;
-    gap: 2rem;
-    flex-wrap: wrap;
-    padding: 1rem 2rem 3rem 4rem;
+    gap: 20px;
+    margin: 30px auto;
+    flex-wrap: wrap; 
+    max-width: 1200px;
 }
 
 /* Tarjetas de sedes */
 .section-card {
-    flex: 0 0 100px;
+    flex: 0 0 calc(50% - 10px); 
     background: white;
     border-radius: 16px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
@@ -358,7 +357,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-bottom: 3px solid #6395c4;
+    border-bottom: 3px solid #2b369b;
 }
 
 /* Texto dentro de la tarjeta */
@@ -378,18 +377,6 @@ body {
     font-size: 1rem;
 }
 
-/* Animación al hacer scroll */
-.sedes .section-card {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.6s ease-out;
-}
-
-.sedes .section-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 /*boton de ver sede*/
 .boton-modal {
     padding: 10px;
@@ -406,7 +393,7 @@ body {
 }
 
 .boton-modal label:hover {
-    background-color: #6382c4;
+    background-color: #4a5cc1;
 }
 
 .modal-toggle {
@@ -436,7 +423,7 @@ body {
 
 /* Contenido del modal */
 .content-modal {
-    background: #fff;
+    background: #f1f4fd;
     width: 1200px;
     max-height: 80vh;
     overflow-y: auto;
@@ -487,12 +474,13 @@ body {
 }
 
 .coach-card {
-    background: #b4daff54;
+    background: #fff;
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
     margin-bottom: 50px;
+    transition: transform 0.3s ease;
 }
 
 .coach-card img {
@@ -572,7 +560,7 @@ body {
 
 /* estilo de los encabezados del footer */
 .footer-grid h4 {
-    color: #6382c4;
+    color: #2b369b;
     margin-bottom: 1rem;
 }
 
@@ -587,7 +575,7 @@ body {
 }
 
 .footer-nav nav a:hover {
-    color: #656ddf;
+    color: #2b369b;
 }
 
 /* estilo de la lista de redes sociales del footer */
@@ -596,7 +584,7 @@ body {
 }
 
 .footer-social h4 {
-    color: #6382c4;
+    color: #2b369b;
     margin-bottom: 1rem;
 }
 
@@ -622,12 +610,12 @@ body {
 }
 
 .footer-social a:hover {
-    color: #6382c4;
+    color: #2b369b;
 }
 
 .footer-social i {
     font-size: 1.3rem;
-    color: #6382c4;
+    color: #2b369b;
 }
 
 .copyright {

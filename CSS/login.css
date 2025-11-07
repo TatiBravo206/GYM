@@ -6,9 +6,9 @@
 }
 
 :root {
-    --azul: #5570d6;
+    --azul: #4a5cc1;
     --azulOscuro: #0B2545;
-    --azulGris: #6385c4;
+    --azulGris: #2b369b;
     --blanco: #fff;
     --letra: black;
     --fuente: "Poppins", Arial, sans-serif;
@@ -80,7 +80,7 @@ body {
 }
 
 .input input:focus {
-    border-color: #668cff;
+    border-color: #4a5cc1;
 }
 
 .password-olvidada a {
@@ -126,7 +126,7 @@ body {
 }
 
 .registro-texto a {
-    color: var(--azul);
+    color: var(--azulGris);
     font-weight: 600;
     text-decoration: none;
 }
